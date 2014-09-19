@@ -54,7 +54,7 @@ The checksum is used to suggest possible corrections by changing one word.
 
 > ...3 lines omitted...
 
-* Example of an 128 bit sentence:
+* Example of a 128 bit sentence:
 
 ./genbrainphrase128
 
