@@ -1,0 +1,57 @@
+#!/usr/bin/python
+import sys
+import names
+import nouns
+import adjectives
+import presverbs
+import pastverbs
+import adverbs
+import preps
+import numpassphrase
+
+def checkphrasereal(wl):
+   n=numpassphrase.tonum89(wl)
+   return numpassphrase.checksump(n)
+
+def checkphrase(wl):
+   if checkphrasereal(wl):
+      print "Valid passphrase"
+   else:
+      print "Invalid passphrase. Computing possible corrections:"
+      numpassphrase.possiblecorrections(wl,checkphrasereal)
+
+def main():
+   if len(sys.argv) < 2:
+      print 'Usage: checkbrainphrase80 <Brain phrase>'
+   elif len(sys.argv) > 2 :
+      k = 1
+      wl = [ ]
+      while k < len(sys.argv):
+         wl.append(sys.argv[k])
+         k=k+1
+      checkphrase(wl)
+   else:
+      p = sys.argv[1]
+      k = 0
+      w = ""
+      wl = [ ]
+      while k < len(p):
+        c=p[k]
+        k=k+1
+        if c==" ":
+           if w != "":
+              wl.append(w)
+              w=""
+        else:
+           w+=c
+      if w != "":
+         wl.append(w)
+      checkphrase(wl)
+
+try:
+   main()
+except ValueError as e:
+   print "Error: ",e
+   sys.exit(1)
+
+

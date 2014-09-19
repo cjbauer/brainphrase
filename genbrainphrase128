@@ -1,0 +1,29 @@
+#!/usr/bin/python
+import sys
+import names
+import nouns
+import adjectives
+import presverbs
+import pastverbs
+import adverbs
+import preps
+import numpassphrase
+
+def main():
+   if len(sys.argv) < 2:
+      with open("/dev/random",'rb') as f:
+         r = f.read(16)
+	 n = 0
+	 for i in range(16):
+	     n = (n<<8) + ord(r[i])
+	 numpassphrase.printphrase(numpassphrase.tophrase_sentence137bit(numpassphrase.addchecksum(n)))
+   else:
+      print "./genbrainphrase128"
+
+try:
+   main()
+except ValueError as e:
+   print "Error: ",e
+   sys.exit(1)
+
+
