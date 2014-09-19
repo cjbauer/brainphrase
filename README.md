@@ -19,15 +19,15 @@ Brainphrase is written in Python and runs under linux.
 
 The 80-bit entropy sentences are all of the form
 
-NP[1] <adverb> <verb> NP[0] <preposition> NP[1]
+NP[1] _adverb_ _verb_ NP[0] _preposition_ NP[1]
 
 where NP[i] is either a proper name or of the form
 
-the <i adjectives> <noun>
+the _i adjectives_ _noun_
 
 The 128-bit entropy sentences are all of the form
 
-NP[2] <preposition> NP[1] <adverb> <verb> NP[2] <preposition> NP[1]
+NP[2] _preposition_ NP[1] _adverb_ _verb_ NP[2] _preposition_ NP[1]
 
 * Example of an 80 bit sentence:
 
@@ -45,9 +45,13 @@ The checksum is used to suggest possible corrections by changing one word.
 ./checkbrainphrase80 Mrs. Caitlin Woodard powerfully weaves Israel Shaw up the defensive analysis
 
 > Invalid passphrase. Computing possible corrections:
+
 > Mrs. Anna Woodard powerfully weaves Israel Shaw up the defensive analysis
+
 > ...9 lines omitted...
+
 > Mrs. Caitlin Woodard powerfully weaves Israel Shaw onto the defensive analysis
+
 > ...3 lines omitted...
 
 * Example of an 128 bit sentence:
