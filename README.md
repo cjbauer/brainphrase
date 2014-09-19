@@ -25,6 +25,10 @@ where NP[i] is either a proper name or of the form
 
 the <i adjectives> <noun>
 
+The 128-bit entropy sentences are all of the form
+
+NP[2] <preposition> NP[1] <adverb> <verb> NP[2] <preposition> NP[1]
+
 * Example of an 80 bit sentence:
 
 ./genbrainphrase80
