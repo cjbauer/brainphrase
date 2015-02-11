@@ -393,6 +393,30 @@ def possiblecorrections(wl,checkfun):
             for u in ul:
                if u != w:
                   wl[i]=u
+                  try:
+                     if checkfun(wl):
+                        printphrase(wl)
+                  except:
+                     pass
+            wl[i]=w
+      if presverbs.drev.has_key(w):
+         for u in pastverbs.drev:
+            if u != w:
+               wl[i]=u
+               try:
                   if checkfun(wl):
                      printphrase(wl)
-            wl[i]=w
+               except:
+                  pass
+         wl[i]=w
+      if pastverbs.drev.has_key(w):
+         for u in presverbs.drev:
+            if u != w:
+               wl[i]=u
+               try:
+                  if checkfun(wl):
+                     printphrase(wl)
+               except:
+                  pass
+         wl[i]=w
+
